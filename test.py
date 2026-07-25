@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
 # Load dataset
-df = pd.read_csv("/urinalysis_test.csv")
+df = pd.read_csv("/data/urinalysis_test.csv")
 
 # Remove unnecessary column
 df.drop("Unnamed: 0", axis=1, inplace=True)
