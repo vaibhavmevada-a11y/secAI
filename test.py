@@ -1,11 +1,14 @@
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
-# Load dataset
-df = pd.read_csv("/data/urinalysis_test.csv")
+# Load dataset (relative to script location)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "data", "urinalysis_tests.csv")
+df = pd.read_csv(csv_path)
 
 # Remove unnecessary column
 df.drop("Unnamed: 0", axis=1, inplace=True)
